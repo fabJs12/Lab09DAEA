@@ -1,0 +1,25 @@
+@model LaboratorioCRUDProductos.Models.ProductoModel
+
+@{
+    ViewBag.Title = "Detalles del producto";
+}
+
+<h2>Detalles del producto</h2>
+
+<dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Id)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Nombre)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Nombre)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Descripcion)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Precio)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Precio)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Stock)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Stock)</dd>
+</dl>
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Volver al listado", "Index")
+</p>

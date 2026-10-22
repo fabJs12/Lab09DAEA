@@ -1,0 +1,31 @@
+@model LaboratorioCRUDProductos.Models.ProductoModel
+
+@{
+    ViewBag.Title = "Eliminar producto";
+}
+
+<h2>Eliminar producto</h2>
+<p>¿Está seguro de que desea eliminar este producto?</p>
+
+<dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Id)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Id)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Nombre)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Nombre)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Descripcion)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Descripcion)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Precio)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Precio)</dd>
+    <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Stock)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(model => model.Stock)</dd>
+</dl>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Id)
+    <p>
+        <input type="submit" value="Confirmar eliminación" class="btn btn-danger" />
+        @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-secondary" })
+    </p>
+}
